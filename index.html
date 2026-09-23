@@ -167,14 +167,11 @@ function testBackendAuth() {
     const backendUrl = 'https://tracks-lands-zoloft-suggestion.trycloudflare.com/v4/Auth/TMA_Login';
 
     fetch(backendUrl, {
-        method: 'POST',
-        headers: {
+        method: 'POST',        
+		headers: {
             'Content-Type': 'application/json',
-            // Некоторые бэкенды ожидают initData в заголовке Authorization
-            // Например: 'Authorization': `TAuth ${initData}`
-        },
-        // Отправляем initData в теле запроса в формате JSON
-        body: JSON.stringify({ initData: initData })
+            'Authorization': `tma ${initData}`
+        }
     })
     .then(response => {
         if (!response.ok) {
