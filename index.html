@@ -169,7 +169,9 @@ function testBackendAuth() {
     fetch(backendUrl, {
         method: 'POST',        
 		headers: {
-            'Authorization': `tma ${initData}`
+            'Authorization': `tma ${initData}`,
+			'X-ID': '1',
+			'X-KEY': 'A3898D47-B891-481B-BB1B-5D26E13758DB'
         }
     })
     .then(response => {
