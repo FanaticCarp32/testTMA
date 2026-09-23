@@ -169,8 +169,7 @@ function testBackendAuth() {
     fetch(backendUrl, {
         method: 'POST',        
 		headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `tma ${initData}`
+            'Authorization': 'tma ${initData}'
         }
     })
     .then(response => {
